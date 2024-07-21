@@ -13,3 +13,4 @@ while True:
     for i in range(6):
         winsound.Beep(666, 700)
         i += 1
+    break
