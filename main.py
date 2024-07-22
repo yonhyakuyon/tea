@@ -33,7 +33,8 @@ def set_up():
     user_time = int(input("Enter time in seconds: "))
     user_sound = input("Enter sound (y/n): ")
     if user_sound == "y":
-        sound_path = input("Enter sound PATH: ")
+        print("I hope u move your .mp3 file to same folder as this program")
+        sound_path = input("Enter sound name: ")
         save_sound(sound_path)
     else:
         save_sound(0)
@@ -72,10 +73,10 @@ def timer():
             for i in range(6):
                 winsound.Beep(666, 700)
                 i += 1
-        else:
-            mus = pyglet.resource.media(load_sound())
-            mus.play()
-            pyglet.app.run()
+        # else:
+        #     music = load_sound()
+        #     mus = pyglet.media.load(music, streaming=False)
+        #     mus.play()
         cls()
         print("Timer finished")
         break
