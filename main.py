@@ -10,8 +10,8 @@ def cls():
 
 
 def save_time(user_time):
-    with shelve.open("settings") as db:
-        db["time"] = user_time
+    with open("settings.txt", "w") as db:
+        db.write(str(user_time))
 
 
 def save_sound(sound_path):
@@ -20,8 +20,8 @@ def save_sound(sound_path):
 
 
 def load_time():
-    with shelve.open("settings") as db:
-        return db["time"]
+    with open("settings.txt", "r") as db:
+        return db.read()
 
 
 def load_sound():
@@ -31,13 +31,13 @@ def load_sound():
 
 def set_up():
     user_time = int(input("Enter time in seconds: "))
-    user_sound = input("Enter sound (y/n): ")
-    if user_sound == "y":
-        print("I hope u move your .mp3 file to same folder as this program")
-        sound_path = input("Enter sound name: ")
-        save_sound(sound_path)
-    else:
-        save_sound(0)
+    # user_sound = input("Enter sound (y/n): ")
+    # if user_sound == "y":
+    #     print("I hope u move your .mp3 file to same folder as this program")
+    #     sound_path = input("Enter sound name: ")
+    #     save_sound(sound_path)
+    # else:
+    #     save_sound(0)
     save_time(user_time)
     print("Settings saved")
     start_message()
@@ -51,12 +51,14 @@ def start_message():
     user_mode = input()
     if user_mode == "!s":
         set_up()
+        cls()
     elif user_mode == "!t":
         timer()
+        cls()
 
 
 def timer():
-    user_time = load_time()
+    user_time = int(load_time())
     while True:
         s = 0  # iterible for seconds
         min = 0  # iterible for minutes
@@ -69,14 +71,9 @@ def timer():
                 min += 1
                 cls()
                 print("Timer: " + str(min) + " minutes " + str(s / 60) + " seconds")
-        if load_sound() == 0:
-            for i in range(6):
-                winsound.Beep(666, 700)
-                i += 1
-        # else:
-        #     music = load_sound()
-        #     mus = pyglet.media.load(music, streaming=False)
-        #     mus.play()
+        for i in range(5):
+            winsound.Beep(666, 700)
+            i += 1
         cls()
         print("Timer finished")
         pyautogui.confirm("Timer finished", "Timer finished", ["ok"])
