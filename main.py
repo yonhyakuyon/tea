@@ -1,7 +1,7 @@
 import time
 import winsound
 import shelve
-import pyglet
+import pyautogui
 import os
 
 
@@ -79,6 +79,7 @@ def timer():
         #     mus.play()
         cls()
         print("Timer finished")
+        pyautogui.confirm("Timer finished", "Timer finished", ["ok"])
         break
 
 

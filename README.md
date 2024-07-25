@@ -12,7 +12,7 @@ You will drink only **perfect** cup of tea!
   <br>
 </h1>
 
-<h4 align="center">Only **perfect** tea! <a href="https://github.com/yonhyakuyon/tea/releases/tag/Yo!" target="_blank">Download</a>.</h4>
+<h4 align="center">Only <h3>perfect tea!</h3> <a href="https://github.com/yonhyakuyon/tea/releases/tag/Yo!" target="_blank">Download</a>.</h4>
 
 <h3 align="center"> <a href="https://github.com/yonhyakuyon/tea/releases/tag/Yo!" target="_blank">Скачать</a></h3>
 ---
