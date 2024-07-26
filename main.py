@@ -34,8 +34,7 @@ def set_up():
 
 
 def start_message():
-    TGREEN = "\033[32m"  # Green Text
-    print(TGREEN + "If u start program first time please set up settings")
+    print("If u start program first time please set up settings")
     print("Here will be timer :)")
     ttk.Button(frm, text="Start timer", command=timer).grid(column=0, row=2)
     ttk.Button(frm, text="Set up settings", command=set_up).grid(column=1, row=2)
